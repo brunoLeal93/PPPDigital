@@ -1,0 +1,343 @@
+{% extends 'base.html'%}
+
+{% block head%} Cotação {%endblock%}
+
+{% block content %}
+	
+	<div class="container-fluid">
+	    <div class="row">
+	        <div class="col-2"> <h1 class="my-4">Cotação</h1></div>
+	    </div>
+	    <!--Fontes-->
+	    <div class="row">
+	    <div class="col-2"> <h5>Fontes:</h5></div>
+	    <div class="col-6"> 
+	        <form>
+	            <label class="checkbox-inline">
+                  <input type="checkbox" value="">Todas&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">Bovespa&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">BM&F&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">CBOT&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">NYSE&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">IPE&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">CBOE&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">S&P&nbsp;&nbsp;
+                </label>
+	        </form>
+	    </div>
+	    <div class="col-1">
+	        <div class="button-group">
+                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"> +
+                    
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                      <label class="checkbox-inline">
+                            <input type="checkbox" value="">&nbsp;Action&nbsp;&nbsp;
+                       </label>
+                  </li>
+                  <li>
+                      <label class="checkbox-inline">
+                            <input type="checkbox" value="">&nbsp;Down Jones&nbsp;&nbsp;
+                       </label>
+                  </li>
+                  <li>
+                      <label class="checkbox-inline">
+                            <input type="checkbox" value="">&nbsp;Fonte A&nbsp;&nbsp;
+                       </label>
+                  </li>
+                  <li>
+                      <label class="checkbox-inline">
+                            <input type="checkbox" value="">&nbsp;Fonte B&nbsp;&nbsp;
+                       </label>
+                  </li>
+                </ul>
+            </div>
+	    </div>
+	    <div class="col-12"></br></div>
+	    <!--form>
+	        <div class="form-check">
+                
+                <div class="col-1">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Todas</label>
+                </div>   
+             </div>
+	    </form-->
+	    </div>
+	    <!--Mercados-->
+	    <div class="row">
+	    <div class="col-2"> <h5>Mercados:</h5></div>
+	    <div class="col-6"> 
+	        <form>
+	            <label class="checkbox-inline">
+                  <input type="checkbox" value="">Todas&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">A Vista&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">A Termo&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">Futuro&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">Opção&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">Swap&nbsp;&nbsp;
+                </label>
+                
+	        </form>
+	    </div>
+	    
+	    <div class="col-12"></br></div>
+	    <!--form>
+	        <div class="form-check">
+                
+                <div class="col-1">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Todas</label>
+                </div>   
+             </div>
+	    </form-->
+	    </div>
+	    <!--Tipos de Ativos-->
+	    <div class="row">
+	    <div class="col-2"> <h5>Tipos de Ativos:</h5></div>
+	    <div class="col-6"> 
+	        <form>
+	            <label class="checkbox-inline">
+                  <input type="checkbox" value="">Todos&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">Ação&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">Índices&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">Câmbio&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">Commodities&nbsp;&nbsp;
+                </label>
+               
+	        </form>
+	    </div>
+	    
+	    <div class="col-12"></br></div>
+	    <!--form>
+	        <div class="form-check">
+                
+                <div class="col-1">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Todas</label>
+                </div>   
+             </div>
+	    </form-->
+	    </div>
+	    <!--Pacotes-->
+	    <div class="row">
+	    <div class="col-2"> <h5>Pacotes:</h5></div>
+	    <div class="col-6"> 
+	        <form>
+	            <label class="checkbox-inline">
+                  <input type="checkbox" value="">Todos&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">Análises&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">News&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">Mercados&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">Conjutura&nbsp;&nbsp;
+                </label>
+                <label class="checkbox-inline">
+                  <input type="checkbox" value="">Trade&nbsp;&nbsp;
+                </label>
+               
+	        </form>
+
+            <form method="POST" enctype="multipart/form-data">
+                {{ form.csrf_token }}
+
+                <div class="row">{{form.rdPesquisaPor.label}}</div>
+                {% for subfield in  form.rdPesquisaPor %}
+
+                    <tr>
+                        <td>{{subfield}}</td>
+                        <td>{{subfield.label}}</td>
+                    </tr>
+                {% endfor %}
+                <div class="row">{{form.txtBusca}}</div>
+            </form>
+
+	    </div>
+	    
+	    <div class="col-12"></br></div>
+	    	    <!--form>
+	        <div class="form-check">
+                
+                <div class="col-1">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Todas</label>
+                </div>   
+             </div>
+	    </form-->
+	    </div>
+        
+	    <!--Busca Ticker-->
+	    <div class="row">
+	        
+	            <div class="col-5">
+	                <div class="form-group">
+                        <label for="codAtivo"><b>Ativo:</b></label>
+                        <input type="text" class="form-control" id="codAtivo" >
+                    </div>
+                </div>
+	            <div class="col-5">
+	                <div class="form-group">
+                        <label for="descAtivo"><b>Descrição Ativo:</b></label>
+                        <input type="text" class="form-control" id="descAtivo" >
+                    </div>
+	            </div>
+	        
+	    </div>
+	    <div class="row">
+	        
+	            <div class="col-5">
+	                <div class="form-group">
+                        <label for="codAtivo"><b>Código Serviço:</b></label>
+                        <input type="text" class="form-control" id="codServ" >
+                    </div>
+                </div>
+	            <div class="col-5">
+	                <div class="form-group">
+                        <label for="descAtivo"><b>Descrição Serviço:</b></label>
+                        <input type="text" class="form-control" id="descServ" >
+                    </div>
+	            </div>
+	        
+	    </div>
+	    <div class="row">
+	        <!--div class="col-1"> </div-->
+	        
+	        <div class="col-12"> 
+		        <table id="tb_cot" class="display" style="width:100%">
+			        <thead>
+				        <tr>
+				                
+					        <th>Fonte</th>
+					        <th>Mercado</th>
+					        <th>Tipo Ativo</th>
+					        
+				        </tr>
+			        </thead>
+			        <!--tbody>
+				        <tr>
+					        <td>BMF</td>
+					        <td>Futuro | Opções | Swap</td>
+					        <td></td>
+				        </tr>
+			        </tbody-->
+		        </table>
+		    </div>
+		    
+		</div>		
+	</div>
+{% endblock %}
+
+{% block scripts %}
+    <!--script src="https://code.jquery.com/jquery-3.3.1.js"></script-->
+	<script>
+	    function format(d){
+	        return 'teste'
+	    }
+	    
+		$(document).ready(function() {
+    		var table = $('#tb_cot').DataTable({
+    		    "language":{
+    		            "search": "Procurar:",
+    		            "paginate":{
+    		                    "first":      "Primeira",
+                                "last":       "Última",
+                                "next":       "Próxima",
+                                "previous":   "Anterior"
+    		                },
+    		           "info": "Mostrando de _START_ a _END_ de _TOTAL_",
+    		           "lengthMenu":     "Mostrando _MENU_ Linhas",
+    		        },
+    		    "ajax": $SCRIPT_ROOT + "/cotVisuPrin",
+    		    "columns": [
+                            
+                            { "data": "fonte" },
+                            { "data": "mercado" },
+                            { "data": "tp_instrumento" }
+                            
+                        ],
+                "order": [[1, 'asc']]
+    		});
+    		
+    		$('#tb_cot tbody').on('click', 'td.details-control', function () {
+                    var tr = $(this).closest('tr');
+                    var row = table.row( tr );
+             
+                    if ( row.child.isShown() ) {
+                        // This row is already open - close it
+                        row.child.hide();
+                        tr.removeClass('shown');
+                    }
+                    else {
+                        // Open this row
+                        row.child( format(row.data()) ).show();
+                        tr.addClass('shown');
+                    }
+            } );
+    		
+		} );
+	</script>
+	<!--script>
+	    var options = [];
+
+            $( '.dropdown-menu a' ).on( 'click', function( event ) {
+
+               var $target = $( event.currentTarget ),
+                   val = $target.attr( 'data-value' ),
+                   $inp = $target.find( 'input' ),
+                   idx;
+
+               if ( ( idx = options.indexOf( val ) ) > -1 ) {
+                  options.splice( idx, 1 );
+                  setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
+               } else {
+                  options.push( val );
+                  setTimeout( function() { $inp.prop( 'checked', true ) }, 0);
+               }
+
+               $( event.target ).blur();
+                  
+               console.log( options );
+               return false;
+    });
+	</script-->
+{% endblock %}

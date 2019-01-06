@@ -1,0 +1,179 @@
+{% extends 'base.html'%}
+
+{% block head%} Cotação {%endblock%}
+
+{% block content %}
+	
+	<div class="container-fluid">
+
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <form method="POST" enctype="multipart/form-data">
+                {{ form.csrf_token }}
+                </br>
+                <div class="row"><h3>Cotação</h3></div>
+                {% for subfield in  form.rdPesquisaPor %}
+
+                    <tr>
+                        <td>{{subfield}}</td>
+                        <td>{{subfield.label}}</td>
+                    </tr>
+                {% endfor %}
+                <div class="row">
+					<div class="col-10"> {{form.txtBusca(class_="form-control")}} </div>
+					<div class="col-2"><button type="submit"  class="btn btn-default">Buscar</button></div>
+
+				</div>
+
+				</br>
+
+            </form>
+        </div>
+	        <!--div class="col-1"> </div-->
+	        
+	        <div class="col-12"> 
+		        <table id="tb_cot" class="display" style="width:100%">
+			        <thead>
+				        <tr>
+				                
+					        <th>Fonte</th>
+					        <th>Mercado</th>
+					        <th>Tipo Ativo</th>
+					        
+				        </tr>
+			        </thead>
+			        <!--tbody>
+				        <tr>
+					        <td>BMF</td>
+					        <td>Futuro | Opções | Swap</td>
+					        <td></td>
+				        </tr>
+			        </tbody-->
+		        </table>
+		    </div>
+		    
+		</div>		
+	</div>
+{% endblock %}
+
+{% block scripts %}
+    <!--script src="https://code.jquery.com/jquery-3.3.1.js"></script-->
+	<script>
+
+		function Mercados(d){
+
+			var strMerc = '';
+			var i = 0;
+
+			for(i=0; i < d.length; i++){
+
+				strMerc = strMerd +'<a href="#">'+d[i]+'</a> ';
+			};
+
+			return strMerc;
+		}
+
+	    function format(d){
+	        return 'teste'
+	    }
+	    
+		$(document).ready(function() {
+    		var table = $('#tb_cot').DataTable({
+    		    "language":{
+    		            "search": "Procurar:",
+    		            "paginate":{
+    		                    "first":      "Primeira",
+                                "last":       "Última",
+                                "next":       "Próxima",
+                                "previous":   "Anterior"
+    		                },
+    		           "info": "Mostrando de _START_ a _END_ de _TOTAL_",
+    		           "lengthMenu":     "Mostrando _MENU_ Linhas",
+    		        },
+    		    "ajax": $SCRIPT_ROOT + "/cotVisuPrin",
+    		    "columns": [
+                            
+                            { "data": "_id" },
+                            {
+                            	"data": "mercados",
+                            	"render": function(data){
+											var strMerc = '';
+											var i = 0;
+											var tam=data.length;
+											for(i=0; i < tam ; i++){
+
+												if( i == tam-1){
+													strMerc = strMerc+'<a href="#">'+data[i]+'</a>';
+												}else{
+													strMerc = strMerc+'<a href="#">'+data[i]+'</a> | ';
+												}
+											};
+
+											return strMerc;
+										}
+                            },
+                            { "data": "tp_instr",
+                             	"render": function(data){
+											var strInstr = '';
+											var i = 0;
+											var tam=data.length;
+											for(i=0; i < tam ; i++){
+
+												if( i == tam-1){
+													strInstr = strInstr +'<a href="#">'+data[i]+'</a>';
+												}else{
+													strInstr = strInstr +'<a href="#">'+data[i]+'</a> | ';
+												}
+											};
+
+											return strInstr;
+										}
+							}
+                            
+                        ],
+                "order": [[0, 'asc']]
+    		});
+    		
+    		$('#tb_cot tbody').on('click', 'td.details-control', function () {
+                    var tr = $(this).closest('tr');
+                    var row = table.row( tr );
+             
+                    if ( row.child.isShown() ) {
+                        // This row is already open - close it
+                        row.child.hide();
+                        tr.removeClass('shown');
+                    }
+                    else {
+                        // Open this row
+                        row.child( format(row.data()) ).show();
+                        tr.addClass('shown');
+                    }
+            } );
+    		
+		} );
+	</script>
+	<!--script>
+	    var options = [];
+
+            $( '.dropdown-menu a' ).on( 'click', function( event ) {
+
+               var $target = $( event.currentTarget ),
+                   val = $target.attr( 'data-value' ),
+                   $inp = $target.find( 'input' ),
+                   idx;
+
+               if ( ( idx = options.indexOf( val ) ) > -1 ) {
+                  options.splice( idx, 1 );
+                  setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
+               } else {
+                  options.push( val );
+                  setTimeout( function() { $inp.prop( 'checked', true ) }, 0);
+               }
+
+               $( event.target ).blur();
+                  
+               console.log( options );
+               return false;
+    });
+	</script-->
+{% endblock %}
