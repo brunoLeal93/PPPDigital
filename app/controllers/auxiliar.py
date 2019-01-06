@@ -17,6 +17,6 @@ class Cotacao():
         vet = list(coll.aggregate(pipeline))
         return vet
 
-a = Cotacao().cotVisuPrin()
+#a = Cotacao().cotVisuPrin()
 
-print(a)
+#print(a)

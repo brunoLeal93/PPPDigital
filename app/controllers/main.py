@@ -16,7 +16,7 @@ def cotacao():
 
         data = form.data
         if request.method == 'POST':
-                print(data)
+                        print(data)
 
         return render_template('cotacao_v2.html', form= form)
 
