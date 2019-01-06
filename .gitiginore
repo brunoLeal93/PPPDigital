@@ -1,0 +1,7 @@
+env/
+.idea/
+__pycache__/
+Base.db
+Mapa_Bolsas_AE.xlsm
+ModelBase2.xlsx
+PPP Digital.zip
